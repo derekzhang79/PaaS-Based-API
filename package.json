@@ -1,0 +1,27 @@
+{
+  "name": "paas-based-api",
+  "version": "1.0.0",
+  "description": "PaaS Based API using the gcloud platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesbarrett95/PaaS-Based-API.git"
+  },
+  "keywords": [
+    "PaaS",
+    "API",
+    "gcloud"
+  ],
+  "author": "James Barrett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesbarrett95/PaaS-Based-API/issues"
+  },
+  "homepage": "https://github.com/jamesbarrett95/PaaS-Based-API#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}

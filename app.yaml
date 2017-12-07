@@ -1,0 +1,7 @@
+
+time: nodejs
+env: flex
+service: jamesbarrett-task2
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 3
