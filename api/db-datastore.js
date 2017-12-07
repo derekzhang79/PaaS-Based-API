@@ -1,5 +1,5 @@
 // require the connection to the datastore on the Google app server.
-const ds = require('@google-cloud/datastore')({ namespace: 'bens-task-2' });
+const ds = require('@google-cloud/datastore')({ namespace: 'jamesbarrett-task2' });
 
 const kind = 'files';
 
