@@ -4,7 +4,7 @@
   "description": "PaaS Based API using the gcloud platform",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/jamesbarrett95/PaaS-Based-API#readme",
   "dependencies": {
+    "@google-cloud/datastore": "^1.1.0",
     "express": "^4.16.2"
   }
 }

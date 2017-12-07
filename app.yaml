@@ -1,5 +1,4 @@
-
-time: nodejs
+runtime: nodejs
 env: flex
 service: jamesbarrett-task2
 automatic_scaling:
