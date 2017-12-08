@@ -1,39 +1,37 @@
-// require the connection to the datastore on the Google app server.
+// Require gcloud datastore with the namespace of our entity
 const ds = require('@google-cloud/datastore')({ namespace: 'jamesbarrett-task2' });
 
-const kind = 'files';
+// Cateogrise our entity for the purpose of queries.
+const kind = 'namecounters';
 
-// keep the code DRY
-function key(id) {
+// A nice helper function which returns a datastore key
+function key (id) {
   return ds.key([kind, id]);
 }
 
-// process get requests and return the value for a name.
-module.exports.get = async (id) => {
+// Retrieve name from datastore.
+module.exports.retrieveName = async (id) => {
   const [data] = await ds.get(key(id));
   if (data && data.val) return `${data.val}`;
   return '0';
 };
 
-// process post requests and add the value to existing or new names.
-module.exports.post = async (id, val) => {
+// Add to the existing counter for a given name in datastore and return the input value initially passed in
+module.exports.addToCounter = async (id, val) => {
     const [data] = await ds.get(key(id));
-    // check if there's an existing value, replacing val with the sum.
     if (data && data.val) {
         val = parseInt(val) + parseInt(data.val);
     }
-    // save val regardless of addition.
       const entity = {
         key: key(id),
         data: { name: id, val },
       }
       await ds.save(entity);
-      // return the final val
       return `${val}`;
 };
 
-// process put requests to update and overwrite the existing key value.
-module.exports.put = async (id, val) => {
+// Reset the existing counter for a given name in datastore and return the input value initially passed in
+module.exports.resetCounter = async (id, val) => {
   const entity = {
     key: key(id),
     data: { name: id, val },
@@ -42,10 +40,9 @@ module.exports.put = async (id, val) => {
   return `${val}`;
 };
 
-// process delete requests and remove the key. Returns 'ok' if deleted, 0 if not.
-module.exports.delete = async(id) => {
+// Delete a name from DataStore.
+module.exports.deleteName = async(id) => {
   const [data] = await ds.delete(key(id));
-  // check if updated.
-  if(data.indexUpdates > 0) return 'ok';
+  if (data.indexUpdates > 0) return 'ok';
   return '0';
 }
