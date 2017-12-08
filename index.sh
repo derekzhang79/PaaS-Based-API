@@ -5,3 +5,6 @@ sudo apt-get install nodejs;
 sudo apt-get install git;
 npm install;
 echo "...Dependencies installed.";
+
+# Start our application!
+npm start
