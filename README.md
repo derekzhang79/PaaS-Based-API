@@ -8,6 +8,7 @@ sh index.sh
 ```
 
 ## Deploy to gcloud
+```
 git clone https://github.com/jamesbarrett95/PaaS-Based-API.git
 cd PaaS-Based-API
 sh deploy.sh
