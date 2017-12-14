@@ -1,10 +1,16 @@
 # PaaS-Based-API
 
-## How to use
+## How to run locally
 ```
 git clone https://github.com/jamesbarrett95/PaaS-Based-API.git
 cd PaaS-Based-API
 sh index.sh
+```
+
+## Deploy to gcloud
+git clone https://github.com/jamesbarrett95/PaaS-Based-API.git
+cd PaaS-Based-API
+sh deploy.sh
 ```
 
 ## Example use of API
